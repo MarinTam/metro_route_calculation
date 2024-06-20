@@ -1,0 +1,17 @@
+(* 問4 *)
+let f lst =
+  let rec pos lst1 =
+    match lst1 with
+      [] -> []
+    | first :: rest ->
+      if first > 0 then first :: pos rest else pos rest
+  in let pos_lst = pos lst
+  in let average lst1  =
+      let rec sum lst2 = match lst2 with
+        [] -> 0
+      | first :: rest -> first + sum rest
+       in let length = List.length lst1
+       in let sum_n = sum lst1
+       in sum_n / length
+  in average pos_lst
+    
